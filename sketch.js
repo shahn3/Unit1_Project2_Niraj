@@ -6,6 +6,8 @@ var rectX = [];
 var rectY = [];
 var numRects = 50;
 var gameOver= false;
+var x1=positionX-10;
+var y1=positionY-10;
 
 function setup() 
 {
@@ -71,10 +73,19 @@ function CollidingObjects ()
 {
   for(var i=0; i < numRects; i++)
   {
-    newPosX=positionX+15;
-    newPosY=positionY+15;
-    
-  if (rectX[i] == positionY)
+  if (rectX[i] <= x1+10 && rectX[i]>=x1 && rectX[i] <= x1 && rectX[i] >= y1)
+  {
+    gameOver= true;
+  }
+  if (rectX[i]+40 <= x1+10 && rectX[i]+40 >= x1 && rectX[i]+40 <= x1 && rectX[i]+40 >= y1)
+  {
+    gameOver= true;
+  }
+  if (rectY[i]+40 <= x1+10 && rectY[i]+40 >= x1 && rectY[i]+40 <= x1 && rectY[i]+40 >= y1)
+  {
+    gameOver= true;
+  }
+  if (rectY[i] <= x1+10 && rectY[i] >= x1 && rectY[i] <= x1 && rectY[i] >= y1)
   {
     gameOver= true;
   }
