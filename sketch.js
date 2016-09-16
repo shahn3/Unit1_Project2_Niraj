@@ -43,7 +43,7 @@ function MoveEllipse()
   background(b);
   fill(200, 221, 176);
   noStroke();
-  rect(positionX, positionY, 20, 20);
+  ellipse(positionX, positionY, 20, 20);
   if (keyIsDown(UP_ARROW) && positionY > 37.5) 
   {
     positionY -= 4;
@@ -69,10 +69,10 @@ function MovingObjects()
 
 function CollidingObjects() 
 {
-  var leftSide   = positionX;
-  var rightSide  = positionX + 20;
-  var topSide    = positionY;
-  var bottomSide = positionY + 20;
+  var leftSide   = positionX - 10;
+  var rightSide  = positionX + 10;
+  var topSide    = positionY - 10;
+  var bottomSide = positionY + 10;
 
   for (var i = 0; i < rectX.length; i++) 
   {
